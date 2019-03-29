@@ -1,2 +1,11 @@
-<h1>Stocker</h1>
-<p>Hello World</p>
+<%= form_tag root_path, :method => "POST" do %>
+        <%= text_field_tag 'id', nil, placeholder: 'Enter Company Tiker Symbol', size: 50%>
+        <%= submit_tag "Lookup stock quote" %>
+<% end %>
+    
+    <br/><br/>
+<%if @stock %> 
+    <%=@stock.company_name%>
+<%elsif @nothing%>
+    <%= @nothing%>
+<% end %>
